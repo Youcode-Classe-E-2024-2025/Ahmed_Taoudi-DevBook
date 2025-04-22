@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 const booksRoutes = require('./routes/books.routes');
-
+const authRoutes = require('./routes/auth.routes');
 const PORT = process.env.PORT;
 
 app.get('/', (req, res) => {
@@ -15,6 +15,8 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/books', booksRoutes);
+
+app.use('/api/auth', authRoutes);
 
 app.listen(PORT, () => {
     console.log(`Serveur en cours sur http://127.0.0.1:${PORT}`);

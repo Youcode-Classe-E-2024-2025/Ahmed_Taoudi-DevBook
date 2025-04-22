@@ -10,7 +10,7 @@ CREATE TABLE users (
     role ENUM('admin','client') DEFAULT 'client',
     status ENUM('active','archived','suspended') DEFAULT 'active',
     email VARCHAR(100) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL
+    password  TEXT NOT NULL
 );
 
 
