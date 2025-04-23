@@ -1,56 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-gray-100 text-gray-900">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DevBook | connection</title>
+    <title>DevBook | Authentication</title>
+    <link href="./css/output.css" rel="stylesheet" />
   </head>
 
-  <body>
-    <h1>connection</h1>
-    <main>
-      <!-- login -->
-      <div id="login-tab">
-        <form id="login-form">
-            <h2>login</h2>
+  <body class="min-h-screen flex flex-col">
+    <!-- Header with Nav -->
+    <header class="bg-white shadow">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-blue-600">DevBook</h1>
+        <nav class="space-x-4">
+          <a href="/" class="text-gray-700 hover:text-blue-600">Home</a>
+          <a href="/catalog.html" class="text-gray-700 hover:text-blue-600">Catalog</a>
+          <!--  -->
+          <a href="/porfile.html" id="profile-link" class="text-gray-700 hover:text-blue-600">Profile</a>
+          <a href="/auth.html" id="login-link" class="text-gray-700 hover:text-blue-600">Login</a>
+          <!--  -->
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Auth Content -->
+    <main class="flex-grow flex items-center justify-center py-12">
+      <div class="w-full max-w-md space-y-10">
+        <!-- Login Form -->
+        <div id="login-tab" class="">
+          <form id="login-form" class="bg-white shadow-md rounded-lg p-6 space-y-6">
+            <h2 class="text-xl font-semibold text-center">Login to Your Account</h2>
 
             <div>
-              <label for="login-email">Email </label>
-              <input id="login-email" name="email" type="email" />
+              <label for="login-email" class="block text-sm font-medium">Email</label>
+              <input id="login-email" name="email" type="email" required class="w-full mt-1 p-2 border rounded" />
             </div>
+
             <div>
-              <label for="login-password">Password </label>
-              <input id="login-password" name="password" type="password" />
+              <label for="login-password" class="block text-sm font-medium">Password</label>
+              <input id="login-password" name="password" type="password" required class="w-full mt-1 p-2 border rounded" />
             </div>
-            <button type="submit"> login </button>
-            <hr>
-            <button onclick="toggleTab('register')" type="button">  create an account first  </button> 
-        </form>
-      </div>
-      <!-- ================ -->
-      <!-- register -->
-      <div id="register-tab">
-        <form id="register-form">
-            <h2>register</h2>
+
+            <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
+              Login
+            </button>
+
+            <hr class="my-4" />
+
+            <button onclick="toggleTab('register')" type="button" class="w-full text-sm text-blue-600 hover:underline">
+              Don't have an account? Register here
+            </button>
+          </form>
+        </div>
+
+        <!-- Register Form -->
+        <div id="register-tab" class="hidden">
+          <form id="register-form" class="bg-white shadow-md rounded-lg p-6 space-y-6">
+            <h2 class="text-xl font-semibold text-center">Create a New Account</h2>
+
             <div>
-              <label for="register-name"> your fullname</label>
-              <input id="register-name" name="name" type="text" />
+              <label for="register-name" class="block text-sm font-medium">Full Name</label>
+              <input id="register-name" name="name" type="text" required class="w-full mt-1 p-2 border rounded" />
             </div>
-    
+
             <div>
-              <label for="register-email">Email </label>
-              <input id="register-email" name="email" type="email" />
+              <label for="register-email" class="block text-sm font-medium">Email</label>
+              <input id="register-email" name="email" type="email" required class="w-full mt-1 p-2 border rounded" />
             </div>
+
             <div>
-              <label for="register-password">Password </label>
-              <input id="register-password" name="password" type="password" />
+              <label for="register-password" class="block text-sm font-medium">Password</label>
+              <input id="register-password" name="password" type="password" required class="w-full mt-1 p-2 border rounded" />
             </div>
-            <button type="submit"> register  </button>
-            <hr>
-            <button onclick="toggleTab('login')" type="button">already have an account</button> 
-        </form>
+
+            <button type="submit" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">
+              Register
+            </button>
+
+            <hr class="my-4" />
+
+            <button onclick="toggleTab('login')" type="button" class="w-full text-sm text-green-600 hover:underline">
+              Already have an account? Login
+            </button>
+          </form>
+        </div>
       </div>
     </main>
+
     <script src="/js/auth.js"></script>
+    <script src="./js/header.js"></script>
   </body>
 </html>
