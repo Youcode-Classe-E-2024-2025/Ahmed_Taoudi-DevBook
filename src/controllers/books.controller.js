@@ -24,8 +24,11 @@ exports.show = async (req, res) => {
 
 exports.store = async (req, res) => {
     const { title, author, date_publication, category_id } = req.body;
+    const image = req.file ? `/uploads/${req.file.filename}` : null;
+    console.log("controller : ",{ title, author, image, date_publication, category_id });
     try {
-        const result = await booksService.create({ title, author, date_publication, category_id });
+        const result = await booksService.create({ title, author, image,  date_publication, category_id });
+        
         const book = await booksService.getById(result.insertId);
         res.status(201).json(book);
     } catch (err) {

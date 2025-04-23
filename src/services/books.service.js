@@ -10,12 +10,14 @@ exports.all = async () => {
 };
 
 
-exports.create = async ({ title, author, date_publication, category_id }) => {
-    const sql = 'INSERT INTO books (title, author, date_publication, category_id) VALUES (?, ?, ?, ?)';
+exports.create = async ({ title, author,image, date_publication, category_id }) => {
+    const sql = 'INSERT INTO books (title, author, image, date_publication, category_id) VALUES (?, ?, ?, ?, ?)';
     try {
-        const [result] = await db.execute(sql, [title, author, date_publication, category_id]);
+        const [result] = await db.execute(sql, [title, author, image, date_publication, category_id]);
+        console.log("service :",result );
         return result;
     } catch (err) {
+        console.log("service.catch msg  :",err.message );
         throw err;
     }
 };
