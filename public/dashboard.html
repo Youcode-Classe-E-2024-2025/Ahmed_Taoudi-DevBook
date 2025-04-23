@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-50 text-gray-900">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevBook | Dashboard</title>
+    <link href="./css/output.css" rel="stylesheet" />
+  </head>
+
+  <body class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-white shadow">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-blue-600">DevBook Admin</h1>
+        <nav class="space-x-4">
+          <a href="/" class="text-gray-700 hover:text-blue-600">Home</a>
+          <a href="/catalog.html" class="text-gray-700 hover:text-blue-600">Catalog</a>
+          <a href="/auth.html" class="text-gray-700 hover:text-blue-600">Logout</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Dashboard Main -->
+    <main class="flex-grow max-w-6xl mx-auto py-12 px-4 space-y-12">
+      <!-- Create Category Section -->
+      <section>
+        <h2 class="text-2xl font-semibold mb-4 text-blue-700">Create New Category</h2>
+        <form id="category-add-form" class="bg-white shadow-md rounded-lg p-6 space-y-4">
+          <div>
+            <label for="category-name" class="block text-sm font-medium">Category Name</label>
+            <input id="category-name" name="name" type="text" required class="w-full mt-1 p-2 border rounded" />
+          </div>
+          <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+            Add Category
+          </button>
+        </form>
+      </section>
+
+      <!-- Create Book Section -->
+      <section>
+        <h2 class="text-2xl font-semibold mb-4 text-blue-700">Add New Book</h2>
+        <form id="book-add-form" enctype="multipart/form-data" class="bg-white shadow-md rounded-lg p-6 space-y-4">
+          <div>
+            <label for="title" class="block text-sm font-medium">Book Title</label>
+            <input id="title" type="text" required class="w-full mt-1 p-2 border rounded" />
+          </div>
+
+          <div>
+            <label for="author" class="block text-sm font-medium">Author</label>
+            <input id="author" type="text" class="w-full mt-1 p-2 border rounded" />
+          </div>
+
+          <div>
+            <label for="image" class="block text-sm font-medium">Cover Image</label>
+            <input id="image" type="file" accept="image/*" class="w-full mt-1 p-2 border rounded" />
+          </div>
+
+          <div>
+            <label for="category_id" class="block text-sm font-medium">Category</label>
+            <select id="category_id" class="w-full mt-1 p-2 border rounded">
+              <option value="">....</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="date_publication" class="block text-sm font-medium">Publication Date</label>
+            <input id="date_publication" name="date_publication" type="date" class="w-full mt-1 p-2 border rounded" />
+          </div>
+
+          <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+            Add Book
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white text-center py-4 text-sm text-gray-500 border-t">
+      © 2025 DevBook Library. Admin Panel.
+    </footer>
+    <script src="./js/admin.js"></script>
+  </body>
+</html>

@@ -58,6 +58,7 @@ loginFrom.addEventListener('submit', async (e) => {
         const data = await res.json();
         if (res.ok) {
             console.log(data.token);
+            localStorage.setItem('token',data.token);
             alert('Login successful!');
         } else {
             alert(data.message || 'Login failed.');
