@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevBook | connection</title>
+  </head>
+
+  <body>
+    <h1>connection</h1>
+    <main>
+      <!-- login -->
+      <div id="login-tab">
+        <form id="login-form">
+            <h2>login</h2>
+
+            <div>
+              <label for="login-email">Email </label>
+              <input id="login-email" name="email" type="email" />
+            </div>
+            <div>
+              <label for="login-password">Password </label>
+              <input id="login-password" name="password" type="password" />
+            </div>
+            <button type="submit"> login </button>
+            <hr>
+            <button onclick="toggleTab('register')" type="button">  create an account first  </button> 
+        </form>
+      </div>
+      <!-- ================ -->
+      <!-- register -->
+      <div id="register-tab">
+        <form id="register-form">
+            <h2>register</h2>
+            <div>
+              <label for="register-name"> your fullname</label>
+              <input id="register-name" name="name" type="text" />
+            </div>
+    
+            <div>
+              <label for="register-email">Email </label>
+              <input id="register-email" name="email" type="email" />
+            </div>
+            <div>
+              <label for="register-password">Password </label>
+              <input id="register-password" name="password" type="password" />
+            </div>
+            <button type="submit"> register  </button>
+            <hr>
+            <button onclick="toggleTab('login')" type="button">already have an account</button> 
+        </form>
+      </div>
+    </main>
+    <script src="/js/auth.js"></script>
+  </body>
+</html>
